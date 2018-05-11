@@ -1,0 +1,16 @@
+{
+  "name": "blackbox_backend",
+  "version": "1.0.0",
+  "description": "Backend for BlackBox todo app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "knex": "^0.14.6",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.3"
+  }
+}
