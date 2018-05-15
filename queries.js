@@ -12,17 +12,6 @@ module.exports = {
       .first()
       .returning('*')
     },
-    addDone(body){
-      return knex('done')
-      .insert(body)
-      .returning('*')
-      .then(newdone => newdone[0])
-    },
-    deleteDone(id){
-      return knex('done')
-      .delete()
-      .where('id', id)
-    },
 
 //Queries for Todo Table
     getAllTodos(){
