@@ -34,4 +34,12 @@ router.delete('/:id', (req, res) => {
   })
 })
 
+router.put('/:id', (req, res) => {
+  const id = req.params.id
+  queries.putTodo(id, req.body)
+  .then((updatedTodo) => {
+    res.status(201)
+  })
+})
+
 module.exports = router

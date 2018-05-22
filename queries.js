@@ -12,6 +12,12 @@ module.exports = {
       .first()
       .returning('*')
     },
+    addDone(body){
+      return knex('done')
+      .insert(body)
+      .returning('*')
+      .then(newdone => newdone[0])
+    },
 
 //Queries for Todo Table
     getAllTodos(){
@@ -34,5 +40,11 @@ module.exports = {
       return knex('todo')
       .delete()
       .where('id', id)
+    },
+    putTodo(id, body){
+      return knex('todo')
+      .where('id', id)
+      .update(body)
+      .returning('*')
     }
 }
